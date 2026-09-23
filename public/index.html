@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sol × Panta — Market Intelligence (read-only)</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <h1>Sol × Panta</h1>
+      <p class="tag">Crypto prediction market intelligence — read-only</p>
+    </div>
+    <div class="badge" title="Required attribution">Powered by Panta</div>
+  </header>
+
+  <main class="layout">
+    <section class="panel filters">
+      <label>
+        Category
+        <select id="category">
+          <option value="">All</option>
+        </select>
+      </label>
+      <label>
+        Phase
+        <select id="phase">
+          <option value="">Any</option>
+          <option value="primary">primary</option>
+          <option value="secondary">secondary</option>
+          <option value="resolved">resolved</option>
+          <option value="cancelled">cancelled</option>
+        </select>
+      </label>
+      <button id="btnRefresh" class="primary">Refresh markets</button>
+      <button id="btnBrief">Run AI brief</button>
+      <span id="status" class="status"></span>
+    </section>
+
+    <section class="panel brief" id="briefPanel">
+      <h2>AI / analytics brief <span class="powered">Powered by Panta</span></h2>
+      <p id="briefSummary" class="summary">Load markets or click “Run AI brief” for a rule-based pulse on the live catalog.</p>
+      <div class="brief-grid">
+        <div>
+          <h3>Category mix</h3>
+          <ul id="catMix"></ul>
+        </div>
+        <div>
+          <h3>Top volume</h3>
+          <ul id="topVol"></ul>
+        </div>
+        <div>
+          <h3>Price skew</h3>
+          <ul id="skewList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="split">
+      <div class="panel markets">
+        <h2>Live markets <span class="powered">Powered by Panta</span></h2>
+        <div id="marketList" class="list"></div>
+        <button id="btnMore" class="ghost" hidden>Load more</button>
+      </div>
+      <div class="panel detail">
+        <h2>Market detail</h2>
+        <div id="marketDetail" class="empty">Select a market to see prices &amp; metadata.</div>
+      </div>
+    </section>
+
+    <section class="panel positions">
+      <h2>Positions lookup <span class="powered">Powered by Panta</span></h2>
+      <form id="posForm" class="pos-form">
+        <label class="grow">
+          Solana wallet
+          <input id="wallet" type="text" spellcheck="false" autocomplete="off" />
+        </label>
+        <button type="submit" class="primary">Lookup</button>
+      </form>
+      <div id="posResult" class="empty">Enter a wallet to list holdings (shares / phase / claimable).</div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Read-only MVP — no create / buy / trade.</span>
+    <a href="https://docs.panta.market/" target="_blank" rel="noopener">Panta docs</a>
+    <span class="powered">Powered by Panta</span>
+  </footer>
+
+  <script src="/app.js" type="module"></script>
+</body>
+</html>

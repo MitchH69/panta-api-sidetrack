@@ -1,0 +1,19 @@
+{
+  "name": "panta-api-mvp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Read-only Panta prediction market intelligence dashboard (Powered by Panta)",
+  "type": "module",
+  "scripts": {
+    "dev": "node server/index.js",
+    "start": "NODE_ENV=production node server/index.js",
+    "smoke": "node scripts/smoke.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0"
+  }
+}
